@@ -1,13 +1,14 @@
 pipeline {
-    agent any
-    options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 1, unit: 'SECONDS')
-    }
+    agent none
+
     stages {
-        stage('Example') {
+        stage('Hello') {
+            agent { label 'robotfw' }
             steps {
-                echo 'Hello World'
+                container('robotfw') {
+                    echo 'Hello World'
+                    sh 'python3 --version'
+                }
             }
         }
     }
