@@ -7,7 +7,7 @@ pipeline {
             steps {
                 container('robotfw') {
                     echo 'Hello World'
-                    echo 'Test auto build 2'
+                    echo 'Test auto build main'
                     sh 'python3 --version'
                 }
             }
