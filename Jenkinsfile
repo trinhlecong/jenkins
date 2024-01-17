@@ -9,6 +9,7 @@ pipeline {
                     echo 'Hello World'
                     echo 'Test auto build master'
                     sh 'python3 --version'
+                    echo "Branch Triggered: ${GIT_BRANCH}"
                 }
             }
         }
